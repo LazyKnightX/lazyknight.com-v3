@@ -190,7 +190,7 @@ apple_touch_icon: '/apple-touch-icon-180x180.png'
 
 # Tab Title Change | 标签页标题切换
 tab_title_change:
-  enable: true
+  enable: false
   left_tab_title: '(つェ⊂) 我藏好了哦~ '
   return_tab_title: '(*´∇｀*) 被你发现啦~ '
 
