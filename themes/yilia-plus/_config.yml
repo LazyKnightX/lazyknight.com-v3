@@ -8,9 +8,10 @@ menu:
 # subNav-子导航
 subNav:
   github: "https://github.com/LazyKnightX"
-  # gitee: "#" # 码云
-  # jianshu: "#" #简书
-  # cnblog: "#"
+  mail: "mailto:lazyknight@foxmail.com"
+  #gitee: "#" # 码云
+  #jianshu: "#" #简书
+  #cnblog: "#"
   #blog: "#"
   #csdn: "#"
   #rss: "#"
@@ -22,7 +23,6 @@ subNav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  mail: "mailto:lazyknight@foxmail.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
