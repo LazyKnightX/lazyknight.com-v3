@@ -1,5 +1,5 @@
 ---
-title: DECONSTRUCTION
+title: 恢复 DECONSTRUCTION 的开发
 tags: [dec]
 date: 2023-8-29 12:14:34 +0800
 ---
