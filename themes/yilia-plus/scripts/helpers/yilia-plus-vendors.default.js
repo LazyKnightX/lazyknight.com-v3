@@ -24,6 +24,5 @@ hexo.extend.helper.register('yilia_plus_full_url', function (url) {
     .replace(/((ht|f)tps\:(\\|\/)+)/ig, 'https://');
   // .replace(/(\\|\/){2,}/g, '/').replace(/((ht|f)tp\:(\\|\/)+)/ig, 'http://')
   yilia_plus_log("yilia_plus_full_url finish ===> " + fullUrl);
-  fullUrl = fullUrl.replace('.html', '');
   return fullUrl;
 });
