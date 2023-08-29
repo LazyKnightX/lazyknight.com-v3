@@ -7,26 +7,27 @@ menu:
 
 # subNav-子导航
 subNav:
-  github: https://github.com/LazyKnightX
-  mail: mailto:lazyknight@foxmail.com
-  #gitee: "#" # 码云
-  #jianshu: "#" #简书
-  #cnblog: "#"
-  #blog: "#"
-  #csdn: "#"
-  #rss: "#"
-  #zhihu: "#"
-  #qq: "img/2434387555.jpg"
-  #weixin: "img/weixin_.png"
-  #weibo: "#"
-  #douban: "#"
-  #segmentfault: "#"
-  #bilibili: "#"
-  #acfun: "#"
-  #facebook: "#"
-  #google: "#"
-  #twitter: "#"
-  #linkedin: "#"
+  - github: https://github.com/LazyKnightX
+  - mail: mailto:lazyknight@foxmail.com
+  # blog: "#"
+  # gitee: "#" # 码云
+  # jianshu: "#" #简书
+  # cnblog: "#"
+  # blog: "#"
+  # csdn: "#"
+  # rss: "#"
+  # zhihu: "#"
+  # qq: "img/2434387555.jpg"
+  # weixin: "img/weixin_.png"
+  # weibo: "#"
+  # douban: "#"
+  # segmentfault: "#"
+  # bilibili: "#"
+  # acfun: "#"
+  # facebook: "#"
+  # google: "#"
+  # twitter: "#"
+  # linkedin: "#"
 
 # 悬停预览图片效果
 hover_effect:
