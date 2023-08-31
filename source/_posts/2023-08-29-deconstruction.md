@@ -1,7 +1,7 @@
 ---
 title: 恢复 DECONSTRUCTION 的开发
 tags: [dec]
-date: 2023-8-29 12:14:34 +0800
+date: 2023-08-29 12:14:34 +0800
 ---
 
 ![](./img/dec/0x0000.png)
