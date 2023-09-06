@@ -1,6 +1,6 @@
 ---
 title: DECONSTRUCTION 的关卡设计显得无聊
-date: 2023-09-06 15:39:40
+date: 2023-09-06 15:39:40 +0800
 tags: [dec]
 ---
 
