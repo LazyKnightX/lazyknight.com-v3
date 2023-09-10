@@ -54,14 +54,14 @@ proxy = http://127.0.0.1:12340
 
 Just follow the guide here,do exact same installations, and your xformers should work.
 
-0. go to the webui directory
-0. source ./venv/bin/activate
-0. cd repositories
-0. git clone https://github.com/facebookresearch/xformers.git
-0. cd xformers
-0. git submodule update --init --recursive
-0. pip install -r requirements.txt
-0. pip install -e .
+1. go to the webui directory
+2. source ./venv/bin/activate
+3. cd repositories
+4. git clone https://github.com/facebookresearch/xformers.git
+5. cd xformers
+6. git submodule update --init --recursive
+7. pip install -r requirements.txt
+8. pip install -e .
 
 The last step will take more time, so be patient.
 
