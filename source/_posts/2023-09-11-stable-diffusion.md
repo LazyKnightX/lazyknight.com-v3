@@ -49,3 +49,20 @@ proxy = http://127.0.0.1:12340
 **参考资料**
 
 * [这可能是全网最好解决中国hugggingface.co无法访问问题 | 知乎专栏](https://zhuanlan.zhihu.com/p/627688602)
+
+## No module 'xformers'. Proceeding without it.
+
+Just follow the guide here,do exact same installations, and your xformers should work.
+
+0. go to the webui directory
+0. source ./venv/bin/activate
+0. cd repositories
+0. git clone https://github.com/facebookresearch/xformers.git
+0. cd xformers
+0. git submodule update --init --recursive
+0. pip install -r requirements.txt
+0. pip install -e .
+
+The last step will take more time, so be patient.
+
+[Link](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/5303#discussioncomment-4303079)
