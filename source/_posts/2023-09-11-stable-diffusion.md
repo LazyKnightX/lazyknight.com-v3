@@ -12,13 +12,20 @@ tags: [stable-diffusion]
 
 ```ini
 [global]
-timeout=6000
-index-url=https://mirrors.aliyun.com/pypi/simple
+timeout = 6000
+index-url = https://mirrors.aliyun.com/pypi/simple
 trusted-host = mirrors.aliyun.com
 ```
 
-4. 重新运行 webui-user.bat
+4. 如果需要使用代理，根据情况输入类似下方的内容：
+
+```ini
+proxy = http://127.0.0.1:12340
+```
+
+5. 重新运行 webui-user.bat
 
 ## 参考资料
 
 * [Stable-Diffusion-Webui 使用笔记(1) -- windows下安装问题汇总 | 知乎专栏](https://zhuanlan.zhihu.com/p/631381743)
+* [win10 pip设置代理  | 知乎专栏](https://zhuanlan.zhihu.com/p/110945788)
