@@ -4,7 +4,7 @@ date: 2023-09-11 00:11:26 +0800
 tags: [stable-diffusion]
 ---
 
-## 运行 `webui-user.bat` 安装超时
+## 运行 `webui-user.bat` 安装 python package 超时
 
 如：
 
