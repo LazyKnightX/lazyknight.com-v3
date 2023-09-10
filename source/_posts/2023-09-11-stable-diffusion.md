@@ -31,7 +31,21 @@ proxy = http://127.0.0.1:12340
 
 5. 重新运行 webui-user.bat
 
-## 参考资料
+**参考资料**
 
 * [Stable-Diffusion-Webui 使用笔记(1) -- windows下安装问题汇总 | 知乎专栏](https://zhuanlan.zhihu.com/p/631381743)
 * [win10 pip设置代理  | 知乎专栏](https://zhuanlan.zhihu.com/p/110945788)
+
+## 连接 huggingface 超时
+
+### 方案1：加载本地模型，通过修改源代码绕过链接来解决
+
+路径： `Repo\stable-diffusion-webui\venv\Lib\site-packages\transformers`
+
+![](./img/stable-diffusion/0x0000.png)
+
+![](./img/stable-diffusion/0x0001.png)
+
+**参考资料**
+
+* [这可能是全网最好解决中国hugggingface.co无法访问问题 | 知乎专栏](https://zhuanlan.zhihu.com/p/627688602)
