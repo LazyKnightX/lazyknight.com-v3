@@ -52,17 +52,21 @@ proxy = http://127.0.0.1:12340
 
 ## No module 'xformers'. Proceeding without it.
 
-Just follow the guide here,do exact same installations, and your xformers should work.
+按如下步骤执行：
 
-1. go to the webui directory
-2. source ./venv/bin/activate
-3. cd repositories
-4. git clone https://github.com/facebookresearch/xformers.git
-5. cd xformers
-6. git submodule update --init --recursive
-7. pip install -r requirements.txt
-8. pip install -e .
+1. 打开 webui 目录 (如 Repo/stable-diffusion-webui)
+2. 运行 `.\venv\scripts\activate.bat`
+3. `cd repositories`
+4. `git clone https://github.com/facebookresearch/xformers.git`
+5. `cd xformers`
+6. `git submodule update --init --recursive`
+7. `pip install -r requirements.txt`
+8. `pip install -e .`
 
-The last step will take more time, so be patient.
+最后一个步骤会很消耗时间，耐心等待。
 
-[Link](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/5303#discussioncomment-4303079)
+可能会在运行 `git submodule update --init --recursive` 出现 `Filename too long` 问题，可以将仓库移动到磁盘根目录，减少路径长度。
+
+**参考资料**
+
+* [AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/5303#discussioncomment-4303079)
