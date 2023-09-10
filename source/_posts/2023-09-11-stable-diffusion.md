@@ -4,7 +4,13 @@ date: 2023-09-11 00:11:26 +0800
 tags: [stable-diffusion]
 ---
 
-## 运行 `webui-user.bat` 安装 `Installing gfpgan` 超时
+## 运行 `webui-user.bat` 安装超时
+
+如：
+
+`Installing gfpgan`
+`Installing clip`
+...
 
 1. `win+r` 输入 `%appdata%` 找到或创建目录 `pip`
 2. 创建 `pip.ini`
