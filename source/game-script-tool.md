@@ -26,3 +26,33 @@ hero:loop(1000, function()
     end
 end)
 ```
+
+# 每拥有1**类** `物品?` ，`属性?` +`v`
+
+```lua
+local hero
+local _n = 0
+local v = 0.05
+hero:loop(1000, function()
+    local n1 = hero:get_owning_count("物品1") or 0
+    local n2 = hero:get_owning_count("物品2") or 0
+    local n3 = hero:get_owning_count("物品3") or 0
+    local n4 = hero:get_owning_count("物品4") or 0
+    local n5 = hero:get_owning_count("物品5") or 0
+    local n6 = hero:get_owning_count("物品6") or 0
+    local n = 0
+    if n1 > 0 then n = n + 1 end
+    if n2 > 0 then n = n + 1 end
+    if n3 > 0 then n = n + 1 end
+    if n4 > 0 then n = n + 1 end
+    if n5 > 0 then n = n + 1 end
+    if n6 > 0 then n = n + 1 end
+    if _n ~= n then
+        local d = n - _n
+        _n = n
+        hero:inc_attr("属性1", d * v)
+        hero:inc_attr("属性2", d * v)
+        hero:inc_attr("属性3", d * v)
+    end
+end)
+```
