@@ -56,3 +56,25 @@ hero:loop(1000, function()
     end
 end)
 ```
+
+# 每存在1个 `敌人` 单位， `属性?` +`v` ，上限20
+
+```lua
+local hero
+local _n = 0
+local _m = 20
+local v = 0.01 --假设1点属性=0.01逻辑值
+hero:loop(1000, function()
+    local n = get_units_in_range(hero, 800):filter_unit_type(UNIT_TYPE_ENEMY):get_count()
+    if n > _m then
+        n = _m
+    end
+    if _n ~= n then
+        local d = n - _n
+        _n = n
+        hero:inc_attr("属性1", d * v)
+        hero:inc_attr("属性2", d * v)
+        hero:inc_attr("属性3", d * v)
+    end
+end)
+```
