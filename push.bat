@@ -1,2 +1,2 @@
 @echo off
-git commit -a -m ~ && git push --all
+git add * && git commit -a -m ~ && git push --all
