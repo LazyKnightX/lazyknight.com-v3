@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lazyknight.com">
-  <title>AHK2 鼠标点击 | Lazy Knight&#39;s Dev hub</title>
+  <title>瞎聊 - 维护大量的游戏事件 | Lazy Knight&#39;s Dev hub</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="按下 Ctrl + 1 以使用这个脚本。会在鼠标当前所在位置重复点击72次，点击间隔为2秒。 123456789101112131415#Requires AutoHotkey v2.0^1::                ; Ctrl + 1&amp;#123;    Loop 72    &amp;#123;        MouseClick &quot;Left&quot;, , , 1, 100">
+  <meta name="description" content="游戏开发中要维护大量的游戏逻辑事件。 如果底层的事件逻辑没有设计清楚，在进行游戏内容开发的时候就会束手束脚，或是频繁被不完善的底层逻辑干扰。 头疼。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AHK2 鼠标点击">
-<meta property="og:url" content="https://lazyknight.com/2024/04/08/ahk2-mouse-click/index.html">
+<meta property="og:title" content="瞎聊 - 维护大量的游戏事件">
+<meta property="og:url" content="https://lazyknight.com/2024/05/20/events/index.html">
 <meta property="og:site_name" content="Lazy Knight&#39;s Dev hub">
-<meta property="og:description" content="按下 Ctrl + 1 以使用这个脚本。会在鼠标当前所在位置重复点击72次，点击间隔为2秒。 123456789101112131415#Requires AutoHotkey v2.0^1::                ; Ctrl + 1&amp;#123;    Loop 72    &amp;#123;        MouseClick &quot;Left&quot;, , , 1, 100">
+<meta property="og:description" content="游戏开发中要维护大量的游戏逻辑事件。 如果底层的事件逻辑没有设计清楚，在进行游戏内容开发的时候就会束手束脚，或是频繁被不完善的底层逻辑干扰。 头疼。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-08T22:51:46.000Z">
-<meta property="article:modified_time" content="2024-05-20T19:36:13.768Z">
+<meta property="article:published_time" content="2024-05-20T11:32:55.000Z">
+<meta property="article:modified_time" content="2024-05-20T19:36:13.772Z">
 <meta property="article:author" content="慵懒骑士">
-<meta property="article:tag" content="ahk2">
+<meta property="article:tag" content="gossip">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lazy Knight&#39;s Dev hub" type="application/atom+xml">
@@ -182,14 +182,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ahk2-mouse-click" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-events" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      AHK2 鼠标点击
+      瞎聊 - 维护大量的游戏事件
     </h1>
   
 
@@ -201,8 +201,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2024/04/08/ahk2-mouse-click/" class="archive-article-date">
-        <time datetime="2024-04-08T22:51:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-04-09</time>
+<a href="/2024/05/20/events/" class="archive-article-date">
+        <time datetime="2024-05-20T11:32:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-20</time>
 </a>
 
   
@@ -215,7 +215,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">102字</span>
+      <span class="post-count">67字</span>
     </span>
   </span>
 
@@ -235,19 +235,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>按下 <code>Ctrl + 1</code> 以使用这个脚本。<br>会在鼠标当前所在位置重复点击72次，点击间隔为2秒。</p>
-<figure class="highlight ahk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#Requires AutoHotkey v2.0</span></span><br><span class="line"></span><br><span class="line"><span class="title">^1::</span>                <span class="comment">; Ctrl + 1</span></span><br><span class="line">&#123;</span><br><span class="line">    Loop <span class="number">72</span></span><br><span class="line">    &#123;</span><br><span class="line">        MouseClick <span class="string">&quot;Left&quot;</span>, , , <span class="number">1</span>, <span class="number">100</span></span><br><span class="line">        Sleep <span class="number">2000</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title">Esc::</span><span class="keyword">ExitApp</span>  <span class="comment">; Exit script with Escape key</span></span><br><span class="line"><span class="title">^!p::</span><span class="keyword">Pause</span>    <span class="comment">; Pause script with Ctrl+Alt+P</span></span><br><span class="line"><span class="title">^!s::</span><span class="keyword">Suspend</span>  <span class="comment">; Suspend script with Ctrl+Alt+S</span></span><br><span class="line"><span class="title">^!r::</span>Reload   <span class="comment">; Reload script with Ctrl+Alt+R</span></span><br></pre></td></tr></table></figure>
-
-<p>文档:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.autohotkey.com/docs/v2/lib/MouseClick.htm">MouseClick</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.autohotkey.com/docs/v2/howto/SendKeys.htm">Keystrokes</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.autohotkey.com/docs/v2/lib/Loop.htm">Loop</a></li>
-</ul>
-<p>参考:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/45700383/how-do-i-stop-an-active-autohotkey-script">How do I stop an active AutoHotkey script?</a></li>
-</ul>
+    <p>游戏开发中要维护大量的游戏逻辑事件。</p>
+<p>如果底层的事件逻辑没有设计清楚，在进行游戏内容开发的时候就会束手束脚，或是频繁被不完善的底层逻辑干扰。</p>
+<p>头疼。</p>
 
     
 
@@ -262,7 +252,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lazyknight.com/2024/04/08/ahk2-mouse-click/" title="AHK2 鼠标点击" target="_blank">https://lazyknight.com/2024/04/08/ahk2-mouse-click/</a>
+          <a href="https://lazyknight.com/2024/05/20/events/" title="瞎聊 - 维护大量的游戏事件" target="_blank">https://lazyknight.com/2024/05/20/events/</a>
         </li>
         
         <li>
@@ -284,7 +274,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ahk2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gossip</a>
         		</li>
       		
 		</ul>
@@ -303,18 +293,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2024/04/12/luban/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Luban
-        
-      </div>
-    </a>
   
-  
-    <a href="/2024/04/05/unknown/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">lab</div>
+    <a href="/2024/05/19/war3-minimap/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">魔兽3小地图大小和位置自定义</div>
       <i class="icon-circle-right"></i>
     </a>
   

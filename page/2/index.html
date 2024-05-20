@@ -6,21 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lazyknight.com">
-  <title>AHK2 鼠标点击 | Lazy Knight&#39;s Dev hub</title>
+  <title>Lazy Knight&#39;s Dev hub</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="按下 Ctrl + 1 以使用这个脚本。会在鼠标当前所在位置重复点击72次，点击间隔为2秒。 123456789101112131415#Requires AutoHotkey v2.0^1::                ; Ctrl + 1&amp;#123;    Loop 72    &amp;#123;        MouseClick &quot;Left&quot;, , , 1, 100">
-<meta property="og:type" content="article">
-<meta property="og:title" content="AHK2 鼠标点击">
-<meta property="og:url" content="https://lazyknight.com/2024/04/08/ahk2-mouse-click/index.html">
+    
+    <!-- <meta name="keywords" content="">
+    <meta name="description" content=""> -->
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Lazy Knight&#39;s Dev hub">
+<meta property="og:url" content="https://lazyknight.com/page/2/index.html">
 <meta property="og:site_name" content="Lazy Knight&#39;s Dev hub">
-<meta property="og:description" content="按下 Ctrl + 1 以使用这个脚本。会在鼠标当前所在位置重复点击72次，点击间隔为2秒。 123456789101112131415#Requires AutoHotkey v2.0^1::                ; Ctrl + 1&amp;#123;    Loop 72    &amp;#123;        MouseClick &quot;Left&quot;, , , 1, 100">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-08T22:51:46.000Z">
-<meta property="article:modified_time" content="2024-05-20T19:36:13.768Z">
 <meta property="article:author" content="慵懒骑士">
-<meta property="article:tag" content="ahk2">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lazy Knight&#39;s Dev hub" type="application/atom+xml">
@@ -182,97 +181,56 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ahk2-mouse-click" class="article article-type-post " itemscope itemprop="blogPost">
+            
+
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 class="article-title" itemprop="name">
-      AHK2 鼠标点击
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/08/27/hello-world/" target="_blank">Hello World</a>
+  
     </h1>
   
 
 
   
   
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2024/04/08/ahk2-mouse-click/" class="archive-article-date">
-        <time datetime="2024-04-08T22:51:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-04-09</time>
+<a href="/2023/08/27/hello-world/" class="archive-article-date">
+        <time datetime="2023-08-27T20:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-28</time>
 </a>
 
   
   
     
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">102字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
 
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>按下 <code>Ctrl + 1</code> 以使用这个脚本。<br>会在鼠标当前所在位置重复点击72次，点击间隔为2秒。</p>
-<figure class="highlight ahk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#Requires AutoHotkey v2.0</span></span><br><span class="line"></span><br><span class="line"><span class="title">^1::</span>                <span class="comment">; Ctrl + 1</span></span><br><span class="line">&#123;</span><br><span class="line">    Loop <span class="number">72</span></span><br><span class="line">    &#123;</span><br><span class="line">        MouseClick <span class="string">&quot;Left&quot;</span>, , , <span class="number">1</span>, <span class="number">100</span></span><br><span class="line">        Sleep <span class="number">2000</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title">Esc::</span><span class="keyword">ExitApp</span>  <span class="comment">; Exit script with Escape key</span></span><br><span class="line"><span class="title">^!p::</span><span class="keyword">Pause</span>    <span class="comment">; Pause script with Ctrl+Alt+P</span></span><br><span class="line"><span class="title">^!s::</span><span class="keyword">Suspend</span>  <span class="comment">; Suspend script with Ctrl+Alt+S</span></span><br><span class="line"><span class="title">^!r::</span>Reload   <span class="comment">; Reload script with Ctrl+Alt+R</span></span><br></pre></td></tr></table></figure>
+    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>文档:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.autohotkey.com/docs/v2/lib/MouseClick.htm">MouseClick</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.autohotkey.com/docs/v2/howto/SendKeys.htm">Keystrokes</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.autohotkey.com/docs/v2/lib/Loop.htm">Loop</a></li>
-</ul>
-<p>参考:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/45700383/how-do-i-stop-an-active-autohotkey-script">How do I stop an active AutoHotkey script?</a></li>
-</ul>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-    
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
     
 
     
-    <div class="declare">
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          慵懒骑士
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="https://lazyknight.com/2024/04/08/ahk2-mouse-click/" title="AHK2 鼠标点击" target="_blank">https://lazyknight.com/2024/04/08/ahk2-mouse-click/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
-          
-          本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
+
     
 
   </div>
@@ -284,7 +242,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ahk2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
@@ -293,33 +251,16 @@
     
 
     
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/08/27/hello-world/">展开全文 >></a>
+    </p>
+    
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2024/04/12/luban/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Luban
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2024/04/05/unknown/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">lab</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -340,14 +281,12 @@
 
 
 
-
-
-
-
-
-
-
-
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">« Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
 
           </div>
@@ -384,8 +323,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
