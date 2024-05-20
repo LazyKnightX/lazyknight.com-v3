@@ -1,7 +1,7 @@
 ---
 title: Windows的Alt+Tab替代方案
 date: 2024-04-15 16:18:43 +0800
-tags: [OS]
+tags: [os]
 ---
 
 Windows 11 的任务切换功能有时候用起来非常别扭。
