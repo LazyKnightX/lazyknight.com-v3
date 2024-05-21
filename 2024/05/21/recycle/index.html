@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lazyknight.com">
-  <title>Tag: lua | 懒鬼博客</title>
+  <title>瞎聊 - 程序开发中的回收 | 懒鬼博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="懒鬼博客">
-<meta property="og:url" content="https://lazyknight.com/tags/lua/index.html">
+  <meta name="description" content="如何设计回收？ 回收的基础是你创建了一个程序对象，这个对象占用了一定的程序资源。当这个对象使用完成以后，你需要解除它占用的程序资源。 在基于任意工具的二次开发工作中，这些工具提供了对象本身的创建和删除API。在这种情况下，如果创建了这个对象以后，你为它添加了额外的功能模块，那你就需要在这个对象被删除的时候，一并删除额外的这些功能模块。 所有的回收逻辑都是基于此建立起来的。 如果回收设计出现难点，往">
+<meta property="og:type" content="article">
+<meta property="og:title" content="瞎聊 - 程序开发中的回收">
+<meta property="og:url" content="https://lazyknight.com/2024/05/21/recycle/index.html">
 <meta property="og:site_name" content="懒鬼博客">
+<meta property="og:description" content="如何设计回收？ 回收的基础是你创建了一个程序对象，这个对象占用了一定的程序资源。当这个对象使用完成以后，你需要解除它占用的程序资源。 在基于任意工具的二次开发工作中，这些工具提供了对象本身的创建和删除API。在这种情况下，如果创建了这个对象以后，你为它添加了额外的功能模块，那你就需要在这个对象被删除的时候，一并删除额外的这些功能模块。 所有的回收逻辑都是基于此建立起来的。 如果回收设计出现难点，往">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-21T14:28:43.000Z">
+<meta property="article:modified_time" content="2024-05-21T22:43:25.198Z">
 <meta property="article:author" content="懒鬼">
+<meta property="article:tag" content="gossip">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="懒鬼博客" type="application/atom+xml">
@@ -177,108 +182,157 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-recycle" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/05/19/compile-lua-on-windows/" class="archive-article-date">
-        <time datetime="2024-05-19T10:35:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-19</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/05/19/compile-lua-on-windows/" target="_blank">在Windows下编译Lua源代码</a>
   
+    <h1 class="article-title" itemprop="name">
+      瞎聊 - 程序开发中的回收
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2024/05/21/recycle/" class="archive-article-date">
+        <time datetime="2024-05-21T14:28:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-21</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">310字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>如何设计回收？</p>
+<p>回收的基础是你创建了一个程序对象，这个对象占用了一定的程序资源。<br>当这个对象使用完成以后，你需要解除它占用的程序资源。</p>
+<p>在基于任意工具的二次开发工作中，这些工具提供了对象本身的创建和删除API。<br>在这种情况下，如果创建了这个对象以后，你为它添加了额外的功能模块，那你就需要在这个对象被删除的时候，一并删除额外的这些功能模块。</p>
+<p>所有的回收逻辑都是基于此建立起来的。</p>
+<p>如果回收设计出现难点，往往是回收流程逻辑的设计缺陷。<br>如果程序流程设计不清晰，在后期运行中就会遗忘某些东西有没有成功被回收，自然就会导致回收失败。</p>
+<p>回收有没有成功？<br>回收的时间点有没有设计清晰？<br>所有的组件有没有遗漏？</p>
+<p>这些工作的关键在于及时和仔细，容不得疏忽。<br>前期的每一个疏忽会变成后期的孔洞，这是程序开发的难点。</p>
+
+    
+
+    
+
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          懒鬼
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://lazyknight.com/2024/05/21/recycle/" title="瞎聊 - 程序开发中的回收" target="_blank">https://lazyknight.com/2024/05/21/recycle/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">lua</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gossip</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2024/04/04/ldoc/" class="archive-article-date">
-        <time datetime="2024-04-04T22:13:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-04-05</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2024/05/20/events/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">瞎聊 - 维护大量的游戏事件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2024/04/04/ldoc/" target="_blank">初步研究ldoc与EmmyLua结合使用以生成文档</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">lua</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
+
+
 
 
           </div>
@@ -316,9 +370,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
