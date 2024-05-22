@@ -6,25 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lazyknight.com">
-  <title>魔兽3小地图大小和位置自定义 | 懒鬼博客</title>
+  <title>瞎聊 - 游戏程序中的动态售价逻辑 | 懒鬼博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="逻辑：  演示图：下载 参考：魔兽3坐标图 来源：《魔兽争霸制图 UI位置》 记录想要修改魔兽3小地图的尺寸和位置，必须在地图初始化时进行修改。如果使用Lua进行地图逻辑开发，同时项目有大量的脚本需要加载，可能会导致游戏实际运行时已经绕开了地图初始化的时间点。在目前实践中发现，最好直接通过WE触发器修改小地图，然后在Lua脚本中进行别的操作。2024-5-21 03:40:18">
+  <meta name="description" content="这是今天在工作中遇见的一个有趣的动态数据的实现需求。 构成：  商店单位 销售品的基础价格 影响价格的参数 销售品的最终价格  销售品的最终价格数据会在两个地方使用：  界面信息展示 销售逻辑判定  我们的实现逻辑可以分为手动刷新和实时演算。 手动刷新： 修改价格相关参数后，手动刷新商店价格。这种做法意味着每一次修改价格参数后都需要运行一次刷新方法。可能会出现由于编写者疏忽或者不同编写者协作不清楚">
 <meta property="og:type" content="article">
-<meta property="og:title" content="魔兽3小地图大小和位置自定义">
-<meta property="og:url" content="https://lazyknight.com/2024/05/19/war3-minimap/index.html">
+<meta property="og:title" content="瞎聊 - 游戏程序中的动态售价逻辑">
+<meta property="og:url" content="https://lazyknight.com/2024/05/21/dynamic-price/index.html">
 <meta property="og:site_name" content="懒鬼博客">
-<meta property="og:description" content="逻辑：  演示图：下载 参考：魔兽3坐标图 来源：《魔兽争霸制图 UI位置》 记录想要修改魔兽3小地图的尺寸和位置，必须在地图初始化时进行修改。如果使用Lua进行地图逻辑开发，同时项目有大量的脚本需要加载，可能会导致游戏实际运行时已经绕开了地图初始化的时间点。在目前实践中发现，最好直接通过WE触发器修改小地图，然后在Lua脚本中进行别的操作。2024-5-21 03:40:18">
+<meta property="og:description" content="这是今天在工作中遇见的一个有趣的动态数据的实现需求。 构成：  商店单位 销售品的基础价格 影响价格的参数 销售品的最终价格  销售品的最终价格数据会在两个地方使用：  界面信息展示 销售逻辑判定  我们的实现逻辑可以分为手动刷新和实时演算。 手动刷新： 修改价格相关参数后，手动刷新商店价格。这种做法意味着每一次修改价格参数后都需要运行一次刷新方法。可能会出现由于编写者疏忽或者不同编写者协作不清楚">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lazyknight.com/img/miscs/6.png">
-<meta property="og:image" content="https://lazyknight.com/img/miscs/5.png">
-<meta property="article:published_time" content="2024-05-19T21:33:24.000Z">
+<meta property="article:published_time" content="2024-05-21T22:42:37.000Z">
 <meta property="article:modified_time" content="2024-05-22T06:50:25.246Z">
 <meta property="article:author" content="懒鬼">
-<meta property="article:tag" content="war3">
+<meta property="article:tag" content="gossip">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lazyknight.com/img/miscs/6.png">
   
     <link rel="alternative" href="/atom.xml" title="懒鬼博客" type="application/atom+xml">
   
@@ -185,14 +182,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-war3-minimap" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-dynamic-price" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      魔兽3小地图大小和位置自定义
+      瞎聊 - 游戏程序中的动态售价逻辑
     </h1>
   
 
@@ -204,8 +201,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2024/05/19/war3-minimap/" class="archive-article-date">
-        <time datetime="2024-05-19T21:33:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-20</time>
+<a href="/2024/05/21/dynamic-price/" class="archive-article-date">
+        <time datetime="2024-05-21T22:42:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-22</time>
 </a>
 
   
@@ -218,7 +215,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">152字</span>
+      <span class="post-count">334字</span>
     </span>
   </span>
 
@@ -238,12 +235,25 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>逻辑：</p>
-<p><img src="/img/miscs/6.png"></p>
-<p>演示图：<a href="file/war3-minimap-sample.w3x">下载</a></p>
-<p>参考：魔兽3坐标图</p>
-<p><img src="/img/miscs/5.png"><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43261514/article/details/123618326">来源：《魔兽争霸制图 UI位置》</a></p>
-<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>想要修改魔兽3小地图的尺寸和位置，必须在地图初始化时进行修改。<br>如果使用Lua进行地图逻辑开发，同时项目有大量的脚本需要加载，可能会导致游戏实际运行时已经绕开了地图初始化的时间点。<br>在目前实践中发现，最好直接通过WE触发器修改小地图，然后在Lua脚本中进行别的操作。<br>2024-5-21 03:40:18</p>
+    <p>这是今天在工作中遇见的一个有趣的动态数据的实现需求。</p>
+<p>构成：</p>
+<ul>
+<li>商店单位</li>
+<li>销售品的基础价格</li>
+<li>影响价格的参数</li>
+<li>销售品的最终价格</li>
+</ul>
+<p>销售品的最终价格数据会在两个地方使用：</p>
+<ul>
+<li>界面信息展示</li>
+<li>销售逻辑判定</li>
+</ul>
+<p>我们的实现逻辑可以分为手动刷新和实时演算。</p>
+<p><strong>手动刷新：</strong></p>
+<p>修改价格相关参数后，手动刷新商店价格。<br>这种做法意味着每一次修改价格参数后都需要运行一次刷新方法。<br>可能会出现由于编写者疏忽或者不同编写者协作不清楚规则导致价格没有实时刷新。</p>
+<p><strong>实时演算：</strong></p>
+<p>由于无论是界面信息还是执行销售都一定会执行一次获取价格的操作，我们可以把最终价格的演算直接放到“获取”这一操作中。</p>
+<p>我在这里采用了实时演算的做法，获取最终价格是低频操作，这里产生的计算开销几乎可以忽略不计。<br>同时由于影响价格的参数可能会是多方面的，手动刷新出错率高，实时演算可以让后续开发不用顾忌这个问题。</p>
 
     
 
@@ -258,7 +268,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lazyknight.com/2024/05/19/war3-minimap/" title="魔兽3小地图大小和位置自定义" target="_blank">https://lazyknight.com/2024/05/19/war3-minimap/</a>
+          <a href="https://lazyknight.com/2024/05/21/dynamic-price/" title="瞎聊 - 游戏程序中的动态售价逻辑" target="_blank">https://lazyknight.com/2024/05/21/dynamic-price/</a>
         </li>
         
         <li>
@@ -280,7 +290,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">war3</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gossip</a>
         		</li>
       		
 		</ul>
@@ -299,18 +309,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2024/05/20/events/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          瞎聊 - 维护大量的游戏事件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2024/05/19/cbse/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CBSE Class 11</div>
+    <a href="/2024/05/21/recycle/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">瞎聊 - 程序开发中的回收</div>
       <i class="icon-circle-right"></i>
     </a>
   
