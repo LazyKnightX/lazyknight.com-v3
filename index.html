@@ -198,7 +198,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2024/05/28/lua-event/" target="_blank">Lua事件注释</a>
+	  <a class="article-title" href="/2024/05/28/lua-event/" target="_blank">Lua注释</a>
   
     </h1>
   
@@ -221,6 +221,9 @@
     
     <p>通过如下方式编写注释来实现不同事件的智能提示。</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">---@class Player</span></span><br><span class="line"><span class="comment">---@field event fun(self: Player, name: &#x27;事件1&#x27;, callback: fun(u: cls_unit, data: event_data_1))</span></span><br><span class="line"><span class="comment">---@field event fun(self: Player, name: &#x27;事件2&#x27;, callback: fun(u: cls_unit, data: event_data_2))</span></span><br><span class="line"><span class="comment">---@field event fun(self: Player, name: &#x27;事件3&#x27;, callback: fun(u: cls_unit, data: event_data_3))</span></span><br><span class="line"><span class="comment">---@field event fun(self: Player, name: &#x27;事件4&#x27;, callback: fun(u: cls_unit, data: event_data_4))</span></span><br><span class="line"><span class="comment">---@field event fun(self: Player, name: &#x27;事件5&#x27;, callback: fun(u: cls_unit, data: event_data_5))</span></span><br><span class="line"><span class="keyword">local</span> Player = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">---@class event_data_1</span></span><br><span class="line"><span class="comment">---@class event_data_2</span></span><br><span class="line"><span class="comment">---@class event_data_3</span></span><br><span class="line"><span class="comment">---@class event_data_4</span></span><br><span class="line"><span class="comment">---@class event_data_5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">---@type Player</span></span><br><span class="line"><span class="keyword">local</span> pp = &#123;&#125;</span><br><span class="line"></span><br><span class="line">pp:event(<span class="string">&#x27;事件4&#x27;</span>, <span class="function"><span class="keyword">function</span> <span class="params">(u, data)</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span>)</span><br></pre></td></tr></table></figure>
+
+<p>通过如下方式编写注释来实现不同属性的智能提示。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plr:inc_attr(<span class="string">&#x27;@攻击力&#x27;</span>, <span class="number">100</span>)</span><br><span class="line">plr:inc_attr(<span class="string">&#x27;@护甲&#x27;</span>, <span class="number">100</span>)</span><br><span class="line">plr:inc_attr(<span class="string">&#x27;@法术强度&#x27;</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">---@class Player</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@攻击力&#x27;, value: integer): integer</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@护甲&#x27;, value: integer): integer</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@法术强度&#x27;, value: integer): integer</span></span><br><span class="line"><span class="keyword">local</span> Player = &#123;&#125;</span><br></pre></td></tr></table></figure>
 
     
 
@@ -1228,11 +1231,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lua</a>
+                <a href="javascript:void(0)" class="js-tag color4">lab</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lab</a>
+                <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
