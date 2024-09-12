@@ -8,6 +8,10 @@ tags: [html, jQuery]
 
 `addEventListener("wheel", (event) => {});`
 
+**注释：**
+
+使用 `event.preventDefault();` 来阻断鼠标原本的滚动功能。
+
 **参考：**
 
 * [MDN - Element: wheel event](https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event)
