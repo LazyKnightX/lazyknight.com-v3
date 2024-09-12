@@ -12,6 +12,10 @@ tags: [html, jQuery]
 
 使用 `event.preventDefault();` 来阻断鼠标原本的滚动功能。
 
+**仓库：**
+
+https://github.com/LazyKnightX/samples/tree/main/samples/html/html-001
+
 **参考：**
 
 * [MDN - Element: wheel event](https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event)
