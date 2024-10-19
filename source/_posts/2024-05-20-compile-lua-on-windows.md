@@ -20,3 +20,7 @@ https://github.com/Pharap/CompilingLua
 注意下方路径需要添加到PATH中。
 
 `C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin`
+
+可能需要安装MSVC v140。
+
+![](img/miscs/7.png)
