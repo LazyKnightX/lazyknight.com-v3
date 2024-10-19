@@ -8,9 +8,15 @@ tags: [lua]
 
 https://github.com/Pharap/CompilingLua
 
+形成目录结构：
+
 ```
 /lua-x.x.x
     /src
     /doc
     /Compile.bat
 ```
+
+注意下方路径需要添加到PATH中。
+
+`C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin`
