@@ -190,6 +190,98 @@
             
 
   
+    <article id="post-powershell-batch-rename" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2024/10/30/powershell-batch-rename/" target="_blank">Powershell 批量修改文件名</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2024/10/30/powershell-batch-rename/" class="archive-article-date">
+        <time datetime="2024-10-30T22:47:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-31</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><strong>功能：</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把所有的 JPG 文件重新命名为 image_编号.jpg</span></span><br><span class="line"><span class="built_in">Get-ChildItem</span> *.jpg | <span class="built_in">ForEach-Object</span> <span class="literal">-Begin</span> &#123;</span><br><span class="line">  <span class="variable">$count</span> = <span class="number">1</span></span><br><span class="line">&#125; <span class="literal">-Process</span> &#123;</span><br><span class="line">  <span class="built_in">Rename-Item</span> <span class="variable">$_</span> <span class="literal">-NewName</span> <span class="string">&quot;image_<span class="variable">$count</span>.jpg&quot;</span></span><br><span class="line">  <span class="variable">$count</span>++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>参考：</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.gtwang.org/windows/how-to-batch-rename-files-in-windows/">在 Windows 中更改大量檔案名稱，批次修改檔名，快速又省力！</a></li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Powershell</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2024/10/30/powershell-batch-rename/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jquery-sample-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1033,102 +1125,6 @@
 
 
   
-    <article id="post-compile-lua-on-windows" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2024/05/19/compile-lua-on-windows/" target="_blank">在Windows下编译Lua源代码</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2024/05/19/compile-lua-on-windows/" class="archive-article-date">
-        <time datetime="2024-05-19T10:35:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-19</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><p>下载Lua源码，复制下面仓库中的Compile.bat，放到源代码目录下运行。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/Pharap/CompilingLua">https://github.com/Pharap/CompilingLua</a></p>
-<p>形成目录结构：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/lua-x.x.x</span><br><span class="line">    /src</span><br><span class="line">    /doc</span><br><span class="line">    /Compile.bat</span><br></pre></td></tr></table></figure>
-
-<p>注意下方路径需要添加到PATH中。</p>
-<p><code>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin</code></p>
-<p>可能需要安装MSVC v140。</p>
-<p><img src="/img/miscs/7.png"></p>
-<h2 id="其它：Lua-for-Windows"><a href="#其它：Lua-for-Windows" class="headerlink" title="其它：Lua for Windows"></a>其它：Lua for Windows</h2><p>如果不需要非得编译源码，只希望使用Lua并且不特别在意版本，可以使用 Lua for Windows (Lua 5.1) 。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/rjpcomputing/luaforwindows/releases">https://github.com/rjpcomputing/luaforwindows/releases</a></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">lua</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2024/05/19/compile-lua-on-windows/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next »</a>
@@ -1283,6 +1279,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Powershell</a>
               </li>
             
             <div class="clearfix"></div>
