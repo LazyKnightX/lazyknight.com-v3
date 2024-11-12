@@ -100,7 +100,6 @@ ignore:
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 theme: yilia-plus
-# theme: hexo-theme-cactus
 # https://github.com/JoeyBling/hexo-theme-yilia-plus
 
 # Deployment
