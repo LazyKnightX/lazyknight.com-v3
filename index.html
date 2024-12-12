@@ -190,6 +190,95 @@
             
 
   
+    <article id="post-powershell-open" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2024/12/12/powershell-open/" target="_blank">允许系统执行Powershell脚本</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2024/12/12/powershell-open/" class="archive-article-date">
+        <time datetime="2024-12-12T15:38:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-12-12</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>允许系统执行 Powershell 脚本：</p>
+<p><code>Set-ExecutionPolicy RemoteSigned</code></p>
+<p>Ref:</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system">https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system</a></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">powershell</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2024/12/12/powershell-open/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-game-unit-attr-reward" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -713,6 +802,8 @@
 <p>通过如下方式编写注释来实现不同属性的智能提示。</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plr:inc_attr(<span class="string">&#x27;@攻击力&#x27;</span>, <span class="number">100</span>)</span><br><span class="line">plr:inc_attr(<span class="string">&#x27;@护甲&#x27;</span>, <span class="number">100</span>)</span><br><span class="line">plr:inc_attr(<span class="string">&#x27;@法术强度&#x27;</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">---@class Player</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@攻击力&#x27;, value: integer): integer</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@护甲&#x27;, value: integer): integer</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@法术强度&#x27;, value: integer): integer</span></span><br><span class="line"><span class="keyword">local</span> Player = &#123;&#125;</span><br></pre></td></tr></table></figure>
 
+<p>更实际的例子。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">---@class event_util</span></span><br><span class="line"><span class="comment">---@field register fun(event_name: &#x27;单位-冷却普攻&#x27;, which_unit: cls_unit, label: string, cooldown: number, callback: fun(u2: cls_unit))</span></span><br><span class="line"><span class="keyword">local</span> event_util = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> event_handlers = &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">---@param which_unit cls_unit</span></span><br><span class="line">    <span class="comment">---@param label string</span></span><br><span class="line">    <span class="comment">---@param cooldown number</span></span><br><span class="line">    <span class="comment">---@param callback fun(u2: cls_unit)</span></span><br><span class="line">    [<span class="string">&#x27;单位-冷却普攻&#x27;</span>] = <span class="function"><span class="keyword">function</span><span class="params">(which_unit, label, cooldown, callback)</span></span></span><br><span class="line">        <span class="keyword">local</span> o = &#123;&#125;</span><br><span class="line"></span><br><span class="line">        msg = which_unit:on(enums.umsg.unit_damage_calc, <span class="function"><span class="keyword">function</span><span class="params">(_, u2, event_data)</span></span></span><br><span class="line">            <span class="comment">---@cast event_data damage_event_data</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> is_first_normal_attack(event_data) <span class="keyword">then</span></span><br><span class="line">                which_unit:do_cool_action(label, cooldown, <span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">                    callback(u2)</span><br><span class="line">                <span class="keyword">end</span>)</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">stop</span><span class="params">()</span></span></span><br><span class="line">            <span class="keyword">if</span> msg <span class="keyword">then</span></span><br><span class="line">                which_unit:off(enums.umsg.unit_damage_calc, msg)</span><br><span class="line">                msg = <span class="literal">nil</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">        o.msg = msg</span><br><span class="line">        o.stop = stop</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> o</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">event_util.register</span><span class="params">(event_name, ...)</span></span></span><br><span class="line">    event_handlers(event_name, ...)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">event_util.test</span><span class="params">()</span></span></span><br><span class="line">    event_util.register(<span class="string">&#x27;单位-冷却普攻&#x27;</span>, <span class="string">&#x27;Yxsk127&#x27;</span>, <span class="number">10</span>, <span class="function"><span class="keyword">function</span><span class="params">(u2)</span></span></span><br><span class="line">        on_trigger(u2)</span><br><span class="line">    <span class="keyword">end</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
     
 
     
@@ -1052,97 +1143,6 @@
 
 
   
-    <article id="post-war3-minimap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2024/05/20/war3-minimap/" target="_blank">魔兽3小地图大小和位置自定义</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2024/05/20/war3-minimap/" class="archive-article-date">
-        <time datetime="2024-05-20T05:33:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-20</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>逻辑：</p>
-<p><img src="/img/miscs/6.png"></p>
-<p>演示图：<a href="file/war3-minimap-sample.w3x">下载</a></p>
-<p>参考：魔兽3坐标图</p>
-<p><img src="/img/miscs/5.png"><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43261514/article/details/123618326">来源：《魔兽争霸制图 UI位置》</a></p>
-<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>想要修改魔兽3小地图的尺寸和位置，必须在地图初始化时进行修改。<br>如果使用Lua进行地图逻辑开发，同时项目有大量的脚本需要加载，可能会导致游戏实际运行时已经绕开了地图初始化的时间点。<br>在目前实践中发现，最好直接通过WE触发器修改小地图，然后在Lua脚本中进行别的操作。<br>2024-5-21 03:40:18</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">war3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2024/05/20/war3-minimap/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next »</a>
@@ -1276,19 +1276,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ahk2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">luban</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">course</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">course</a>
+                <a href="javascript:void(0)" class="js-tag color5">ahk2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1309,6 +1309,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Windows10</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">powershell</a>
               </li>
             
             <div class="clearfix"></div>

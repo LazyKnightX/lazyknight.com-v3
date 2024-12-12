@@ -18,7 +18,7 @@
 <meta property="og:description" content="通过如下方式编写注释来实现不同事件的智能提示。 1234567891011121314151617181920---@class Player---@field event fun(self: Player, name: &amp;#x27;事件1&amp;#x27;, callback: fun(u: cls_unit, data: event_data_1))---@field event fun(self:">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-29T07:41:32.000Z">
-<meta property="article:modified_time" content="2024-10-19T03:52:06.784Z">
+<meta property="article:modified_time" content="2024-12-12T15:39:24.687Z">
 <meta property="article:author" content="懒鬼">
 <meta property="article:tag" content="lua">
 <meta name="twitter:card" content="summary">
@@ -221,7 +221,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">233字</span>
+      <span class="post-count">384字</span>
     </span>
   </span>
 
@@ -230,7 +230,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -247,6 +247,8 @@
 <p>通过如下方式编写注释来实现不同属性的智能提示。</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plr:inc_attr(<span class="string">&#x27;@攻击力&#x27;</span>, <span class="number">100</span>)</span><br><span class="line">plr:inc_attr(<span class="string">&#x27;@护甲&#x27;</span>, <span class="number">100</span>)</span><br><span class="line">plr:inc_attr(<span class="string">&#x27;@法术强度&#x27;</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">---@class Player</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@攻击力&#x27;, value: integer): integer</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@护甲&#x27;, value: integer): integer</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@法术强度&#x27;, value: integer): integer</span></span><br><span class="line"><span class="keyword">local</span> Player = &#123;&#125;</span><br></pre></td></tr></table></figure>
 
+<p>更实际的例子。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">---@class event_util</span></span><br><span class="line"><span class="comment">---@field register fun(event_name: &#x27;单位-冷却普攻&#x27;, which_unit: cls_unit, label: string, cooldown: number, callback: fun(u2: cls_unit))</span></span><br><span class="line"><span class="keyword">local</span> event_util = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> event_handlers = &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">---@param which_unit cls_unit</span></span><br><span class="line">    <span class="comment">---@param label string</span></span><br><span class="line">    <span class="comment">---@param cooldown number</span></span><br><span class="line">    <span class="comment">---@param callback fun(u2: cls_unit)</span></span><br><span class="line">    [<span class="string">&#x27;单位-冷却普攻&#x27;</span>] = <span class="function"><span class="keyword">function</span><span class="params">(which_unit, label, cooldown, callback)</span></span></span><br><span class="line">        <span class="keyword">local</span> o = &#123;&#125;</span><br><span class="line"></span><br><span class="line">        msg = which_unit:on(enums.umsg.unit_damage_calc, <span class="function"><span class="keyword">function</span><span class="params">(_, u2, event_data)</span></span></span><br><span class="line">            <span class="comment">---@cast event_data damage_event_data</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> is_first_normal_attack(event_data) <span class="keyword">then</span></span><br><span class="line">                which_unit:do_cool_action(label, cooldown, <span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">                    callback(u2)</span><br><span class="line">                <span class="keyword">end</span>)</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">stop</span><span class="params">()</span></span></span><br><span class="line">            <span class="keyword">if</span> msg <span class="keyword">then</span></span><br><span class="line">                which_unit:off(enums.umsg.unit_damage_calc, msg)</span><br><span class="line">                msg = <span class="literal">nil</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">        o.msg = msg</span><br><span class="line">        o.stop = stop</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> o</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">event_util.register</span><span class="params">(event_name, ...)</span></span></span><br><span class="line">    event_handlers(event_name, ...)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">event_util.test</span><span class="params">()</span></span></span><br><span class="line">    event_util.register(<span class="string">&#x27;单位-冷却普攻&#x27;</span>, <span class="string">&#x27;Yxsk127&#x27;</span>, <span class="number">10</span>, <span class="function"><span class="keyword">function</span><span class="params">(u2)</span></span></span><br><span class="line">        on_trigger(u2)</span><br><span class="line">    <span class="keyword">end</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
     
 
     
@@ -474,19 +476,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ahk2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">luban</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">course</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">course</a>
+                <a href="javascript:void(0)" class="js-tag color5">ahk2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,6 +509,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Windows10</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">powershell</a>
               </li>
             
             <div class="clearfix"></div>
