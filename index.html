@@ -196,6 +196,92 @@
             
 
   
+    <article id="post-war3-unit-attack-tree-sample" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2024/12/13/war3-unit-attack-tree-sample/" target="_blank">魔兽3单位攻击树木演示</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2024/12/13/war3-unit-attack-tree-sample/" class="archive-article-date">
+        <time datetime="2024-12-13T03:12:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-12-13</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>演示图：<a href="file/war3-unit-attack-tree-sample.w3x">下载</a></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">war3</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2024/12/13/war3-unit-attack-tree-sample/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-war3-technology-sample" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1038,110 +1124,6 @@
 
 
   
-    <article id="post-dynamic-price" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2024/05/22/dynamic-price/" target="_blank">瞎聊 - 游戏程序中的动态售价逻辑</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2024/05/22/dynamic-price/" class="archive-article-date">
-        <time datetime="2024-05-22T06:42:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-22</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>这是今天在工作中遇见的一个有趣的动态数据的实现需求。</p>
-<p>构成：</p>
-<ul>
-<li>商店单位</li>
-<li>销售品的基础价格</li>
-<li>影响价格的参数</li>
-<li>销售品的最终价格</li>
-</ul>
-<p>销售品的最终价格数据会在两个地方使用：</p>
-<ul>
-<li>界面信息展示</li>
-<li>销售逻辑判定</li>
-</ul>
-<p>我们的实现逻辑可以分为手动刷新和实时演算。</p>
-<p><strong>手动刷新：</strong></p>
-<p>修改价格相关参数后，手动刷新商店价格。<br>这种做法意味着每一次修改价格参数后都需要运行一次刷新方法。<br>可能会出现由于编写者疏忽或者不同编写者协作不清楚规则导致价格没有实时刷新。</p>
-<p><strong>实时演算：</strong></p>
-<p>由于无论是界面信息还是执行销售都一定会执行一次获取价格的操作，我们可以把最终价格的演算直接放到“获取”这一操作中。</p>
-<p>我在这里采用了实时演算的做法，获取最终价格是低频操作，这里产生的计算开销几乎可以忽略不计。<br>同时由于影响价格的参数可能会是多方面的，手动刷新出错率高，实时演算可以让后续开发不用顾忌这个问题。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gossip</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2024/05/22/dynamic-price/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next »</a>
@@ -1303,19 +1285,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Windows10</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Powershell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">lkgdk</a>
+                <a href="javascript:void(0)" class="js-tag color5">Windows10</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">powershell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">lkgdk</a>
               </li>
             
             <div class="clearfix"></div>
