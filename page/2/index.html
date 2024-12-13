@@ -78,6 +78,8 @@
 			
 				<li><a href="/lua-tool" target="_blank">Lua工具箱</a></li>
 			
+				<li><a href="/war3-sample" target="_blank">魔兽3演示图</a></li>
+			
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -143,6 +145,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -165,13 +169,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a target="_blank" rel="noopener" href="https://notebook.lazyknight.com/">长满荒草的笔记本</a></li>
+					<li style="width: 20%"><a target="_blank" rel="noopener" href="https://notebook.lazyknight.com/">长满荒草的笔记本</a></li>
 		        
-					<li style="width: 25%"><a href="/game-script-tool">乱写的游戏脚本工具箱</a></li>
+					<li style="width: 20%"><a href="/game-script-tool">乱写的游戏脚本工具箱</a></li>
 		        
-					<li style="width: 25%"><a href="/lua-tool">Lua工具箱</a></li>
+					<li style="width: 20%"><a href="/lua-tool">Lua工具箱</a></li>
+		        
+					<li style="width: 20%"><a href="/war3-sample">魔兽3演示图</a></li>
 		        
 				</ul>
 			</nav>
@@ -188,6 +194,186 @@
           </div>
           <div id="js-content" class="content-ll">
             
+
+  
+    <article id="post-recycle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2024/05/22/recycle/" target="_blank">瞎聊 - 程序开发中的回收</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2024/05/22/recycle/" class="archive-article-date">
+        <time datetime="2024-05-21T22:28:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-22</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>如何设计回收？</p>
+<p>回收的基础是你创建了一个程序对象，这个对象占用了一定的程序资源。<br>当这个对象使用完成以后，你需要解除它占用的程序资源。</p>
+<p>在基于任意工具的二次开发工作中，这些工具提供了对象本身的创建和删除API。<br>在这种情况下，如果创建了这个对象以后，你为它添加了额外的功能模块，那你就需要在这个对象被删除的时候，一并删除额外的这些功能模块。</p>
+<p>所有的回收逻辑都是基于此建立起来的。</p>
+<p>如果回收设计出现难点，往往是回收流程逻辑的设计缺陷。<br>如果程序流程设计不清晰，在后期运行中就会遗忘某些东西有没有成功被回收，自然就会导致回收失败。</p>
+<p>回收有没有成功？<br>回收的时间点有没有设计清晰？<br>所有的组件有没有遗漏？</p>
+<p>这些工作的关键在于及时和仔细，容不得疏忽。<br>前期的每一个疏忽会变成后期的孔洞，这是程序开发的难点。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gossip</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2024/05/22/recycle/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-events" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2024/05/21/events/" target="_blank">瞎聊 - 维护大量的游戏事件</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2024/05/21/events/" class="archive-article-date">
+        <time datetime="2024-05-20T19:32:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-21</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>游戏开发中要维护大量的游戏逻辑事件。</p>
+<p>如果底层的事件逻辑没有设计清楚，在进行游戏内容开发的时候就会束手束脚，或是频繁被不完善的底层逻辑干扰。</p>
+<p>头疼。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gossip</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2024/05/21/events/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
 
   
     <article id="post-war3-minimap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -932,224 +1118,9 @@
 
 
   
-    <article id="post-ldoc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2024/04/05/ldoc/" target="_blank">初步研究ldoc与EmmyLua结合使用以生成文档</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2024/04/05/ldoc/" class="archive-article-date">
-        <time datetime="2024-04-05T06:13:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-04-05</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="lunarmodules-ldoc"><a href="#lunarmodules-ldoc" class="headerlink" title="lunarmodules&#x2F;ldoc"></a>lunarmodules&#x2F;ldoc</h1><ul>
-<li>首页: <a target="_blank" rel="noopener" href="https://lunarmodules.github.io/ldoc/">index</a></li>
-<li>仓库: <a target="_blank" rel="noopener" href="https://github.com/lunarmodules/ldoc">github</a></li>
-</ul>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>经过初步研究，疑似无法直接将两者(ldoc、EmmyLua)结合使用。</p>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
-<li>Windows 11</li>
-<li>Lua for Windows (5.1.5)</li>
-<li>ldoc 1.5.0</li>
-</ul>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li>克隆仓库 <code>https://github.com/lunarmodules/ldoc.git</code> 到 <code>d:/ldoc</code></li>
-<li>在 ldoc.lua 所在目录下打开控制台</li>
-<li>输入 <code>lua ldoc.lua &quot;D:\你的Lua代码路径&quot;</code></li>
-<li>生成的文档将在控制台的运行根目录，本例中为 ldoc.lua 同级目录 <code>doc</code></li>
-<li>打开 <code>doc/index.html</code> 查看文档</li>
-</ol>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="报错-‘class’-cannot-have-multiple-values"><a href="#报错-‘class’-cannot-have-multiple-values" class="headerlink" title="报错: ‘class’ cannot have multiple values"></a>报错: ‘class’ cannot have multiple values</h3><p><code>togglecomponent.lua:7: ?: &#39;class&#39; cannot have multiple values; &#123;ToggleComponent : Object,module&#125;</code></p>
-<p>使用 <a target="_blank" rel="noopener" href="https://github.com/dingshukai/lua-oop">dingshukai&#x2F;lua-oop</a> 框架的情况下报错。</p>
-<p>错误代码:</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">---@class ToggleComponent : Object</span></span><br><span class="line"><span class="keyword">local</span> ToggleComponent = oop.class()</span><br></pre></td></tr></table></figure>
-
-<p>经过对ldoc文档的阅读，发现ldoc疑似不支持现在正在VSCode和Jetbrain中流行的lua注释语法（基于<a target="_blank" rel="noopener" href="https://emmylua.github.io/">EmmyLua</a>）。</p>
-<p><code>@class</code> 是EmmyLua提供的注释语法，但不被ldoc支持。</p>
-<p>类似的，像 <code>---@param p1 number</code> 这样的语法也不能被正确解读，在ldoc中， <code>@param</code> 指代的是没有指定数据类型的参数。</p>
-<p>如果要指定参数类型，需要使用 <code>@int</code> 等直接指定类型的标签。</p>
-<p>想要同时使用EmmyLua和ldoc似乎是不可能的。</p>
-<p><img src="/img/miscs/1.png"></p>
-<p><img src="/img/miscs/2.png"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://keplerproject.github.io/luadoc/manual.html">LuaDoc手册</a></li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">lua</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2024/04/05/ldoc/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2023/08/28/hello-world/" target="_blank">Hello World</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2023/08/28/hello-world/" class="archive-article-date">
-        <time datetime="2023-08-28T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-28</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2023/08/28/hello-world/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">« Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">« Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next »</a>
     </nav>
   
 
@@ -1280,19 +1251,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ahk2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">luban</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">course</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color5">ahk2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">course</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1317,6 +1288,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">powershell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">lkgdk</a>
               </li>
             
             <div class="clearfix"></div>
