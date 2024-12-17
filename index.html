@@ -202,6 +202,105 @@
             
 
   
+    <article id="post-batch-copy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2024/12/17/batch-copy/" target="_blank">Batch批处理 Copy</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2024/12/17/batch-copy/" class="archive-article-date">
+        <time datetime="2024-12-17T15:50:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-12-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>复制并覆盖已有文件，不提示。</p>
+<p><code>copy /b/v/y dirname_a\dirname_b\filename.ext dirname_c\filename.ext</code></p>
+<p><strong>参考：</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/4051294/how-to-overwrite-existing-files-in-batch">How to overwrite existing files in batch?</a></li>
+<li><a target="_blank" rel="noopener" href="https://ss64.com/nt/copy.html">SS64: Copy</a></li>
+</ul>
+<p><strong>其它：</strong></p>
+<p>也可以使用 <code>xcopy</code> 命令来覆盖文件夹。</p>
+<p><code>xcopy /s /y &quot;C:\backupMai&quot; &quot;\\myserver\backup$\logFile\c022456&quot;</code></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://superuser.com/questions/1643024/overwrite-folder-with-xcopy">Overwrite folder with Xcopy</a></li>
+<li><a target="_blank" rel="noopener" href="https://ss64.com/nt/xcopy.html">SS64: XCOPY</a></li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">batch</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2024/12/17/batch-copy/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-war3-unit-attack-tree-sample" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1038,98 +1137,6 @@
 
 
   
-    <article id="post-lua-event" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2024/05/29/lua-event/" target="_blank">Lua注释</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2024/05/29/lua-event/" class="archive-article-date">
-        <time datetime="2024-05-29T07:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-29</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>通过如下方式编写注释来实现不同事件的智能提示。</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">---@class Player</span></span><br><span class="line"><span class="comment">---@field event fun(self: Player, name: &#x27;事件1&#x27;, callback: fun(u: cls_unit, data: event_data_1))</span></span><br><span class="line"><span class="comment">---@field event fun(self: Player, name: &#x27;事件2&#x27;, callback: fun(u: cls_unit, data: event_data_2))</span></span><br><span class="line"><span class="comment">---@field event fun(self: Player, name: &#x27;事件3&#x27;, callback: fun(u: cls_unit, data: event_data_3))</span></span><br><span class="line"><span class="comment">---@field event fun(self: Player, name: &#x27;事件4&#x27;, callback: fun(u: cls_unit, data: event_data_4))</span></span><br><span class="line"><span class="comment">---@field event fun(self: Player, name: &#x27;事件5&#x27;, callback: fun(u: cls_unit, data: event_data_5))</span></span><br><span class="line"><span class="keyword">local</span> Player = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">---@class event_data_1</span></span><br><span class="line"><span class="comment">---@class event_data_2</span></span><br><span class="line"><span class="comment">---@class event_data_3</span></span><br><span class="line"><span class="comment">---@class event_data_4</span></span><br><span class="line"><span class="comment">---@class event_data_5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">---@type Player</span></span><br><span class="line"><span class="keyword">local</span> pp = &#123;&#125;</span><br><span class="line"></span><br><span class="line">pp:event(<span class="string">&#x27;事件4&#x27;</span>, <span class="function"><span class="keyword">function</span> <span class="params">(u, data)</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span>)</span><br></pre></td></tr></table></figure>
-
-<p>通过如下方式编写注释来实现不同属性的智能提示。</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plr:inc_attr(<span class="string">&#x27;@攻击力&#x27;</span>, <span class="number">100</span>)</span><br><span class="line">plr:inc_attr(<span class="string">&#x27;@护甲&#x27;</span>, <span class="number">100</span>)</span><br><span class="line">plr:inc_attr(<span class="string">&#x27;@法术强度&#x27;</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">---@class Player</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@攻击力&#x27;, value: integer): integer</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@护甲&#x27;, value: integer): integer</span></span><br><span class="line"><span class="comment">---@field inc_attr fun(self: Player, name: &#x27;@法术强度&#x27;, value: integer): integer</span></span><br><span class="line"><span class="keyword">local</span> Player = &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>更实际的例子。</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">---@class event_util</span></span><br><span class="line"><span class="comment">---@field register fun(event_name: &#x27;单位-冷却普攻&#x27;, which_unit: cls_unit, label: string, cooldown: number, callback: fun(u2: cls_unit))</span></span><br><span class="line"><span class="keyword">local</span> event_util = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> event_handlers = &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">---@param which_unit cls_unit</span></span><br><span class="line">    <span class="comment">---@param label string</span></span><br><span class="line">    <span class="comment">---@param cooldown number</span></span><br><span class="line">    <span class="comment">---@param callback fun(u2: cls_unit)</span></span><br><span class="line">    [<span class="string">&#x27;单位-冷却普攻&#x27;</span>] = <span class="function"><span class="keyword">function</span><span class="params">(which_unit, label, cooldown, callback)</span></span></span><br><span class="line">        <span class="keyword">local</span> o = &#123;&#125;</span><br><span class="line"></span><br><span class="line">        msg = which_unit:on(enums.umsg.unit_damage_calc, <span class="function"><span class="keyword">function</span><span class="params">(_, u2, event_data)</span></span></span><br><span class="line">            <span class="comment">---@cast event_data damage_event_data</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> is_first_normal_attack(event_data) <span class="keyword">then</span></span><br><span class="line">                which_unit:do_cool_action(label, cooldown, <span class="function"><span class="keyword">function</span><span class="params">()</span></span></span><br><span class="line">                    callback(u2)</span><br><span class="line">                <span class="keyword">end</span>)</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">stop</span><span class="params">()</span></span></span><br><span class="line">            <span class="keyword">if</span> msg <span class="keyword">then</span></span><br><span class="line">                which_unit:off(enums.umsg.unit_damage_calc, msg)</span><br><span class="line">                msg = <span class="literal">nil</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">        o.msg = msg</span><br><span class="line">        o.stop = stop</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> o</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">event_util.register</span><span class="params">(event_name, ...)</span></span></span><br><span class="line">    event_handlers(event_name, ...)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">event_util.test</span><span class="params">()</span></span></span><br><span class="line">    event_util.register(<span class="string">&#x27;单位-冷却普攻&#x27;</span>, <span class="string">&#x27;Yxsk127&#x27;</span>, <span class="number">10</span>, <span class="function"><span class="keyword">function</span><span class="params">(u2)</span></span></span><br><span class="line">        on_trigger(u2)</span><br><span class="line">    <span class="keyword">end</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">lua</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2024/05/29/lua-event/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next »</a>
@@ -1255,19 +1262,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">lab</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">lua</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ahk2</a>
+                <a href="javascript:void(0)" class="js-tag color4">lab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">luban</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ahk2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1299,11 +1306,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">lkgdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">powershell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">lkgdk</a>
+                <a href="javascript:void(0)" class="js-tag color1">batch</a>
               </li>
             
             <div class="clearfix"></div>
